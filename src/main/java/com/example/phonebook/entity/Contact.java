@@ -8,6 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
+import javax.validation.constraints.NotNull;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -31,6 +32,7 @@ public class Contact {
 	@ManyToOne(cascade = CascadeType.ALL)
 	private Address address;
 	
+	@NotNull
 	private String phoneNumber;
 
 }
