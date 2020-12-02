@@ -38,8 +38,19 @@ public class ContactService {
 	}
 
 	public String createNewContact(Contact contact) {
-		contactRepo.save(contact);
+		saveContact(contact);
 		return "redirect:/contacts/" + contact.getId();
+	}
+
+	private void saveContact(Contact contact) {
+		contactRepo.save(contact);
+	}
+	
+	private void saveContactsAddress(Contact contact) {
+		Address address = new Address();
+		address.setStreet(contact.getAddress().getStreet());
+		address.setCity(contact.getAddress().getCity());
+		addressService.saveAddress(address);
 	}
 
 	public String displayContactDetailsPage(Integer id, Model model) {
@@ -163,6 +174,35 @@ public class ContactService {
 	
 		Pageable pageable = PageRequest.of(pageNo - 1, pageSize, sort);
 		return contactRepo.findAllByPhoneNumber(phoneNumber, pageable);
+	}
+
+	public String displayUpdateContactPage(Integer id, Model model) {
+		Contact contact = getContactById(id);
+		model.addAttribute("contact", contact);
+		return "updateContactForm";
+	}
+
+	public String updateContact(Contact contact) {
+		saveContact(contact);
+		return "redirect:/contacts/" + contact.getId();
+	}
+
+	public String displayDeleteContactConfirmationPage(Integer id, Model model) {
+		Contact contact = getContactById(id);
+		model.addAttribute("contact", contact);
+		return "deleteContactConfirmation";
+	}
+
+	public String deleteContactById(Integer id) {
+		Contact contact = getContactById(id);
+		Address address = contact.getAddress();
+		addressService.deleteAddress(address);
+		deleteContact(contact);
+		return "redirect:/";
+	}
+
+	private void deleteContact(Contact contact) {
+		contactRepo.delete(contact);
 	}
 	
 

@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -18,7 +19,8 @@ import lombok.NoArgsConstructor;
 public class Address {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@SequenceGenerator(name="mysequence", initialValue=21)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="mysequence")
 	private Integer id;
 	
 	private String street;

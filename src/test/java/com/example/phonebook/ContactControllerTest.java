@@ -40,21 +40,7 @@ public class ContactControllerTest {
 	
 	@Autowired
 	private ObjectMapper objectMapper;
-	
-//	@Test
-//	void whenValidInput_returns200() throws Exception {
-//
-//		Address address = new Address();
-//		address.setId(101);
-//		address.setCity("Skopje");
-//		address.setStreet("Partizanska");
-//		Contact contact = new Contact();
-//		contact.setAddress(address);
-//
-//		mockMvc.perform(post("/contacts/create", contact).contentType("application/json")
-//				.content(objectMapper.writeValueAsString(contact))).andExpect(status().isOk());
-//
-//	}
+
 	
 	@Test
 	void verifyInputValidation() throws Exception {

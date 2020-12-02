@@ -82,4 +82,24 @@ public class ContactController {
 		return contactService.findPaginatedContactNumbers(pageNo, pageSize, sortField, sortDir, model, phoneNumber);
 	}
 	
+	@GetMapping("/contacts/{id}/edit")
+	public String viewUpdateContactPage(@PathVariable("id") Integer id, Model model) {
+		return contactService.displayUpdateContactPage(id, model);
+	}
+	
+	@PostMapping("/contacts/update")
+	public String updateContact(@ModelAttribute("contact") Contact contact) {
+		return contactService.updateContact(contact);
+	}
+	
+	@GetMapping("/contacts/{id}/delete")
+	public String viewDeleteContactConfirmationPage(@PathVariable("id") Integer id, Model model) {
+		return contactService.displayDeleteContactConfirmationPage(id, model);
+	}
+	
+	@PostMapping("/contacts/delete/{id}")
+	public String deleteContact(@PathVariable("id") Integer id) {
+		 return contactService.deleteContactById(id);
+	}
+	
 }
