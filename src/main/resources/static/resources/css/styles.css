@@ -1,0 +1,360 @@
+body {
+    /* background-color: #fbeab6; */
+    background-color: #ffffff;
+    font-family: 'Assistant', sans-serif;
+    font-weight: 300;
+}
+
+a {
+    color: #212529;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+html,
+body {
+   margin:0;
+   padding:0;
+   height:100%;
+}
+
+#container {
+   min-height:100%;
+   position:relative;
+}
+
+.bold-text {
+	font-weight: bold;
+}
+
+/*
+#body {
+   padding-bottom:222px;   
+}  /* Height of the footer */
+
+#footer {
+   position:absolute;
+   bottom:0;
+   width:100%;
+   height:222px;   /* Height of the footer */
+}
+
+/* TOP BAR */
+.top-bar {
+    padding: 4px 0 4px;
+    background: #f4f4f4;
+    font-size: 16px;
+}
+
+.top-bar .cnt-account {
+    float: left;
+    padding: 6px 0px;
+}
+
+.top-bar .cnt-account ul > li {
+    display: inline-block;
+    line-height: 12px;
+    padding: 3px 12px;
+    border-left: 1px solid #e2e2e2;
+}
+
+.top-bar .cnt-block {
+    float: right;
+    padding: 6px 0px;
+}
+
+.top-bar .cnt-block .list-inline > li {
+    display: inline-block;
+}
+
+.top-bar .cnt-block .list-inline > li > a {
+    border: 0px;
+    padding: 6px 15px;
+    transition: all 0.2s linear 0s;
+    display: inline-block;
+}
+
+.top-bar .cnt-block .list-inline > li > a:hover, .top-bar .cnt-block .list-inline > li > a:focus {
+    text-decoration: none;
+    color: #888888;
+}
+
+/* NAVBAR */
+.brand-info-col#brand-wrapper {
+    margin-left: 16px;
+}
+
+.logo-img-col#logo-wrapper {
+    padding-left: 0;
+    padding-right: 0;
+    width: 150px;
+}
+
+/* div#name-location-phone {
+    width: 70%;
+} */
+
+#header-nav {
+    /* background-color: #657A6B; */
+    background-color: #ffc107;
+}
+
+#logo-img {
+    background-image: url(/images/Logo.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 100%;
+    height: 160px;
+}
+
+.navbar-brand {
+    display: inline-block;
+    padding-top: .3125rem;
+    padding-bottom: .3125rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    font-size: 1rem;
+    line-height: inherit;
+    white-space: nowrap;
+}
+.navbar-brand h1 {
+    font-family: 'Fjalla One', sans-serif;
+    color: #000000;
+}
+
+.navbar-brand a:hover, .navbar-brand a:focus {
+    text-decoration: none;
+}
+
+.navbar-location-phone a span img {
+    height: 20px;
+    width: 20px;
+}
+
+.navbar-location-phone a span {
+    color: #ffffff;
+    margin-left: 16px;
+}
+
+.navbar-location-phone a:hover, .navbar-location-phone a:focus {
+    text-decoration: none;
+}
+
+#nav-list {
+	padding-right: 15px;
+}
+
+#nav-list a {
+    text-align: center;
+    font-size: 1.2em;
+}
+
+#add-owner-btn, #add-vet-btn {
+	padding-left: 30px;
+}
+
+.table > tbody > tr > td {
+	padding: 8px;
+	line-height: 1.428571429;
+	vertical-align: top;
+}
+
+.dl-horizontal dt {
+    float: left;
+    width: 160px;
+    clear: left;
+    text-align: right;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.dl-horizontal dd {
+    margin-left: 180px;
+}
+
+table > td > th .pet-visit-link {
+	border-bottom: none;
+	border-top: none;
+}
+
+.table thead th {
+	border-bottom: none;
+}
+
+/* Medium Devices*/
+@media (min-width: 768px) and (max-width: 991px) {
+    /* #logo-img {
+        background-image: url(/images/Logo.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100px;
+        height: 100px;
+    } */
+
+    .navbar-brand {
+        display: inline-block;
+        padding-top: .3125rem;
+        padding-bottom: .3125rem;
+        margin-right: 1rem;
+        margin-left: 1rem;
+        font-size: 1.25rem;
+        line-height: inherit;
+        white-space: nowrap;
+    }
+
+    #nav-list a {
+        text-align: center;
+        font-size: 1.4em;
+    }
+
+}
+
+/* Small Devices*/
+@media (min-width: 576px) and (max-width: 768px) {
+    #nav-list a {
+        text-align: center;
+        font-size: 1.4em;
+    }
+
+    .navbar-location-phone a span img {
+        height: 40px;
+        width: 40px;
+    }
+
+    div.navbar-location {
+        margin-right: 20px;
+    }
+
+    div.navbar-phone {
+        margin-right: 20px;
+    }
+}
+
+/* Extra Small Devices*/
+@media screen and (max-width: 575px) {
+    .navbar-brand h1 {
+        font-family: 'Fjalla One', sans-serif;
+        color: #ffffff;
+        font-size: 7vw;
+    }
+
+    #nav-list a {
+        text-align: center;
+        font-size: 1.4em;
+    }
+
+    .card-footer section, section.menu-section {
+        text-align: center;
+    }
+
+    .card-footer section hr, .menu-section hr {
+        width: 50%;
+    }
+}
+
+#carousel-box {
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+div.container h2 {
+    margin-top: 15px;
+}
+
+div.container section {
+    margin-bottom: 40px;
+}
+
+#menu-tile, #events-tile, #map-tile, #burger-night, #steak-break, #winemaker-series {
+    height: 250px;
+    width: 100%;
+    position: relative;
+    border: 2px solid #343f37;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+#menu-tile:hover, #events-tile:hover, #map-tile:hover, #burger-night:hover, #steak-break:hover, #winemaker-series:hover {
+    box-shadow: 0 1px 5px 1px #a8a4a4;
+}
+
+#menu-tile {
+    background: url("/images/menu-tile.jpg") no-repeat;
+    background-position: center;
+
+}
+
+#events-tile {
+    background: url("/images/events-tile.jpg") no-repeat;
+    background-position: center;
+}
+
+#burger-night {
+    background: url("/images/events/burger-night.jpg") no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+#steak-break {
+    background: url("/images/events/steak-break.jpg") no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+#winemaker-series {
+    background: url("/images/events/winemaker-series.jpg") no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+section.event-section {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#menu-tile span, #events-tile span, #map-tile span, #burger-night span, #steak-break span, #winemaker-series span {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 1.6em;
+    color: #fff;
+    background-color: #000;
+    opacity: 0.7;
+}
+
+.card-footer div.row {
+    margin-bottom: 30px;
+}
+
+#hours-section > span, #contact-section > span, #about-section > span {
+    font-size: 1.1em;
+}
+
+div.text-center {
+    font-size: 0.9em;
+}
+
+/* MENU SECTION */
+section.menu-section {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+section.menu-section > span {
+    font-size: 1.1em;
+    font-weight: bolder;
+}
+
+section.menu-section p {
+    margin-bottom: 0;
+}
+
+section.product-section {
+    margin-bottom: 40px;
+}
