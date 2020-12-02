@@ -65,7 +65,25 @@ public class ContactRepositoryTest {
 		contact.setAddress(address);
 		contactRepo.save(contact);
 		
-		assertThat(contactRepo.findByPhoneNumberOrSurname("389070987456", "Kochevski")).isNotNull();
+		assertThat(contactRepo.findByPhoneNumberOrSurname("+389070987456", "Kochevski")).isNotNull();
+	}
+	
+	@Test
+	void whenSaved_thenFindsByPhoneNumber() {
+		Address address = new Address();
+		address.setId(2);
+		address.setCity("Skopje");
+		address.setStreet("Partizanska");
+		
+		Contact contact = new Contact();
+		contact.setId(2);
+		contact.setName("Risto");
+		contact.setSurname("Kochevski");
+		contact.setPhoneNumber("+389070123456");
+		contact.setAddress(address);
+		contactRepo.save(contact);
+		
+		assertThat(contactRepo.findByPhoneNumber("+389")).isNotNull();
 	}
 	
 	@Test
