@@ -56,7 +56,7 @@ public class ContactController {
 	
 	@GetMapping("/contacts/filterByNumber")
 	public String findByPhoneNumber(Model model, Contact contact) {
-		return findPaginatedNumbers(1, "surname", "asc", model, contact);
+		return findPaginatedNumbers("", 1, "surname", "asc", model, contact);
 	}
 	
 	@GetMapping("/page/{pageNo}")
@@ -68,13 +68,15 @@ public class ContactController {
 		return contactService.findPaginatedContacts(pageNo, pageSize, sortField, sortDir, model);
 	}
 	
-	@GetMapping("/filter/page/{pageNo}")
-	public String findPaginatedNumbers(@PathVariable (value = "pageNo") int pageNo, 
+	@GetMapping("/filter/byNumber/{criteria}/page/{pageNo}")
+	public String findPaginatedNumbers(@PathVariable (value = "criteria") String phoneNumber, @PathVariable (value = "pageNo") int pageNo, 
 			@RequestParam("sortField") String sortField,
 			@RequestParam("sortDir") String sortDir,
 			Model model, Contact contact) {
 		int pageSize = 5;
-		String phoneNumber = contact.getPhoneNumber();
+		if (phoneNumber == "") {
+			phoneNumber = contact.getPhoneNumber();
+		}
 		return contactService.findPaginatedContactNumbers(pageNo, pageSize, sortField, sortDir, model, phoneNumber);
 	}
 	

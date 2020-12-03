@@ -61,7 +61,7 @@ public class ContactRepositoryTest {
 		contact.setAddress(address);
 		contactRepo.save(contact);
 		
-		assertThat(contactRepo.findByPhoneNumberOrSurname("+389070987456", "Kochevski")).isNotNull();
+		assertThat(contactRepo.findByPhoneNumberContainingOrSurnameContaining("+389070987456", "Kochevski")).isNotNull();
 	}
 	
 	@Test
@@ -79,7 +79,7 @@ public class ContactRepositoryTest {
 		contact.setAddress(address);
 		contactRepo.save(contact);
 		
-		assertThat(contactRepo.findByPhoneNumber("+389")).isNotNull();
+		assertThat(contactRepo.findByPhoneNumberLike("+389")).isNotNull();
 	}
 	
 	@Test

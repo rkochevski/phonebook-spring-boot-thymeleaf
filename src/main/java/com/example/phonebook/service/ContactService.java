@@ -82,7 +82,7 @@ public class ContactService {
 	}
 
 	private List<Contact> findByPhoneNumberOrSurname(String phoneNubmer, String surname) {
-		return contactRepo.findByPhoneNumberOrSurname(phoneNubmer, surname);
+		return contactRepo.findByPhoneNumberContainingOrSurnameContaining(phoneNubmer, surname);
 	}
 
 	public String displayContactsListBySurnamePage(Model model) {
@@ -120,7 +120,7 @@ public class ContactService {
 	}
 
 	private List<Contact> getByPhoneNumber(String phoneNumber) {
-		return contactRepo.findByPhoneNumber(phoneNumber);
+		return contactRepo.findByPhoneNumberLike(phoneNumber);
 	}
 
 	private List<Contact> getAllContacts() {
@@ -155,6 +155,7 @@ public class ContactService {
 		Page<Contact> page = findPaginatedNumbers(pageNo, pageSize, sortField, sortDir, phoneNumber);
 		List<Contact> contacts = page.getContent();
 		
+		model.addAttribute("criteria", phoneNumber);
 		model.addAttribute("currentPage", pageNo);
 		model.addAttribute("totalPages", page.getTotalPages());
 		model.addAttribute("totalItems", page.getTotalElements());

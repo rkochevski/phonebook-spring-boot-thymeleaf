@@ -14,14 +14,13 @@ import com.example.phonebook.entity.Contact;
 @Repository
 public interface ContactRepository extends JpaRepository<Contact, Integer> {
 
-	List<Contact> findByPhoneNumberOrSurname(String phoneNubmer, String surname);
+	List<Contact> findByPhoneNumberContainingOrSurnameContaining(String phoneNubmer, String surname);
 
 	List<Contact> findByOrderBySurnameAsc();
 
-	@Query("SELECT contact FROM Contact contact WHERE contact.phoneNumber LIKE :phoneNumber%")
-	List<Contact> findByPhoneNumber(@Param("phoneNumber")String phoneNumber);
+	List<Contact> findByPhoneNumberLike(String phoneNumber);
 
 	@Query("SELECT contact FROM Contact contact WHERE contact.phoneNumber LIKE :phoneNumber%")
-	Page<Contact> findAllByPhoneNumber(@Param("phoneNumber") String phoneNumber, Pageable pageable);
+	Page<Contact> findAllByPhoneNumber(@Param("phoneNumber")  String phoneNumber, Pageable pageable);
 
 }
